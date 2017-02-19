@@ -61,7 +61,9 @@ include_once('TestConnection.php');
     <?php
       $results = $conn->query("select * from Comments") ;
       print_r($results);
-
+      foreach ($results as $result){
+        echo "test";
+      }
      ?>
     <div class="maincontainer">
       <form method="POST" action="index.php">
