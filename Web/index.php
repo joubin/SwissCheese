@@ -63,8 +63,8 @@
         <label for="name">Name</label>
         <input name="name" id="name" placeholder="John Doe"  class="form-control" />
         <label for="textarea">Note</label>
-        <textarea name="notes" id="notes">
-        </textarea>
+        <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+
         <input type="submit" name="Submit" />
       </form>
     </div>
