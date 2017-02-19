@@ -62,7 +62,7 @@ include_once('TestConnection.php');
     $results = $conn->query("select * from Comments") ;
     if($results){
       // Cycle through results
-      while ($row = $result->fetch_object()){
+      while ($row = $results->fetch_object()){
         $user_arr[] = $row;
         echo "ASD";
       }
