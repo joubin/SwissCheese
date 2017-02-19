@@ -61,7 +61,6 @@ include_once('TestConnection.php');
     <?php
       $results = $conn->query("select * from Comments") ;
       print_r($results);
-      echo $results;
 
      ?>
     <div class="maincontainer">
