@@ -58,7 +58,9 @@
 
     <div class="maincontainer">
       <form action="POST" target="index.php">
-        Name: <input name="name" id="name" placeholder="name"  />
+        <label for="email">Email</label>
+        <input name="name" id="name" placeholder="name"  class="form-control" />
+
         Email: <input name="name" id="name" placeholder="name"  />
       </form>
 
