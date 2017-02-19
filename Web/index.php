@@ -58,7 +58,7 @@
 
     <div class="maincontainer">
       <form action="POST" target="index.php">
-        <input name="name" id="name" placeholder="name"  />
+        Name: <input name="name" id="name" placeholder="name"  />
         <input name="password" id="password" type="password" placeholder="password"  />
       </form>
 
