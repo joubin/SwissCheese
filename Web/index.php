@@ -60,7 +60,7 @@ include_once('TestConnection.php');
   <div class="maincontainer">
     <?php
     $results = $conn->query("select * from Comments") ;
-    if($result){
+    if($results){
       // Cycle through results
       while ($row = $result->fetch_object()){
         $user_arr[] = $row;
