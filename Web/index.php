@@ -61,7 +61,6 @@
         <label for="email">Email</label>
         <input name="name" id="name" placeholder="name"  class="form-control" />
 
-        Email: <input name="name" id="name" placeholder="name"  />
       </form>
 
     </div>
