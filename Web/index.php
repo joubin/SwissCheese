@@ -59,18 +59,19 @@ include_once('TestConnection.php');
 
   <div class="maincontainer">
     <?php
-      $results = $conn->query("select * from Comments") ;
-      if($result){
-     // Cycle through results
-    while ($row = $result->fetch_object()){
+    $results = $conn->query("select * from Comments") ;
+    if($result){
+      // Cycle through results
+      while ($row = $result->fetch_object()){
         $user_arr[] = $row;
+        echo "ASD";
+      }
+      // Free result set
+      $result->close();
+      $db->next_result();
     }
-    // Free result set
-    $result->close();
-    $db->next_result();
-}
 
-     ?>
+    ?>
     <div class="maincontainer">
       <form method="POST" action="index.php">
         <label for="email">Email</label>
