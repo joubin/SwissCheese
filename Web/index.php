@@ -59,7 +59,12 @@
     <div class="maincontainer">
       <form action="POST" target="index.php">
         <label for="email">Email</label>
-        <input name="name" id="name" placeholder="name"  class="form-control" />
+        <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+        <label for="name">Name</label>
+        <input name="name" id="name" placeholder="John Doe"  class="form-control" />
+        <label for="textarea">Note</label>
+        <textarea name="notes" id="notes">
+        </textarea>
 
       </form>
 
