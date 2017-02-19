@@ -60,10 +60,16 @@ include_once('TestConnection.php');
   <div class="maincontainer">
     <?php
       $results = $conn->query("select * from Comments") ;
-      print_r($results);
-      foreach ($results as $result){
-        echo "test";
-      }
+      if($result){
+     // Cycle through results
+    while ($row = $result->fetch_object()){
+        $user_arr[] = $row;
+    }
+    // Free result set
+    $result->close();
+    $db->next_result();
+}
+
      ?>
     <div class="maincontainer">
       <form method="POST" action="index.php">
