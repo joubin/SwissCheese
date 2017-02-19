@@ -65,7 +65,7 @@
         <label for="textarea">Note</label>
         <textarea name="notes" id="notes">
         </textarea>
-
+        <input type="submit" name="Submit" />
       </form>
 
     </div>
