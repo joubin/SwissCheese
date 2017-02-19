@@ -65,7 +65,7 @@
         <label for="textarea">Note</label>
         <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
 
-        <input type="submit" name="Submit" />
+        <button type="submit" class="btn btn-default">Confirm identity</button>
       </form>
     </div>
 
