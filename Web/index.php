@@ -67,7 +67,7 @@ include_once('TestConnection.php');
         echo "ASD";
       }
       // Free result set
-      $result->close();
+      $results->close();
       $db->next_result();
     }
 
