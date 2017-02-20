@@ -69,8 +69,10 @@
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
-      $results = $conn->query("select * from Comments") ;
-      $result = $conn->query()
+      /* Select queries return a resultset */
+      if ($result = $mysqli->query("SELECT * FROM Comments")) {
+          printf("Select returned %d rows.\n", $result->num_rows);
+      }
       ?>
       <form method="POST" action="index.php">
         <label for="email">Email</label>
