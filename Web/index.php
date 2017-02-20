@@ -4,6 +4,9 @@ include_once("TestConnection.php");
 $name = $_POST["name"];
 $email = $_POST["email"];
 $text = $_POST["notes"]
+$image = $_POST["image"]
+
+$conn->query("insert into Comments values(NULL, $name, $email, $text, $image)")
 ?>
 
 <!DOCTYPE html>
@@ -102,10 +105,12 @@ END;
 
       <hr />
       <form method="POST" action="index.php">
-        <label for="email">Email</label>
-        <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
         <label for="name">Name</label>
         <input name="name" id="name" placeholder="John Doe"  class="form-control" />
+        <label for="email">Email</label>
+        <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+        <label for="name">Image</label>
+        <input name="image" id="image" placeholder="i.imgur.com"  class="form-control" />
         <label for="textarea">Note</label>
         <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
 
