@@ -90,7 +90,6 @@
           </div><!-- /panel-body -->
           </div><!-- /panel panel-default -->
           </div><!-- /col-sm-5 -->
-          </div><!-- /row -->
 END;
 
           // printf($result['name']);
