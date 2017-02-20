@@ -73,7 +73,7 @@
       if ($results = $conn->query("SELECT * FROM Comments")) {
           foreach ($results as $result) {
 
-            printf("""
+            print <<<END
             <div class="col-sm-5">
             <div class="panel panel-default">
             <div class="panel-heading">
@@ -84,7 +84,8 @@
             </div><!-- /panel-body -->
             </div><!-- /panel panel-default -->
             </div><!-- /col-sm-5 -->
-            """);
+            END;
+            
             echo "";
             // print_r($result);
             printf('<img src="'.$result["image"].'"  />');
