@@ -76,11 +76,7 @@
           $imageurl = $result["image"];
           $text = $result["text"];
           print <<<END
-          <div class="col-sm-1">
           <img class="img-responsive user-photo thumbnail" src="$imageurl">
-
-          </div><!-- /col-sm-1 -->
-
           <div class="col-sm-5">
           <div class="panel panel-default">
           <div class="panel-heading">
