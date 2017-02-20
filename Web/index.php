@@ -114,8 +114,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       </div><!-- /panel-body -->
       </div><!-- /panel panel-default -->
       </div><!-- /col-sm-5 -->
-      </div><!-- /row -->
-END;
+      </div><!-- /row -->END;
 
     }
   }else{
@@ -136,24 +135,24 @@ END;
       </form>
       <?php
     }else{
-    ?>
+      ?>
 
-    <form method="POST" action="index.php">
-      <label for="name">Name</label>
-      <input name="name" id="name" placeholder="John Doe"  class="form-control" />
-      <label for="email">Email</label>
-      <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
-      <label for="password">Password</label>
-      <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
-      <label for="name">Image</label>
-      <input name="image" id="image" placeholder="i.imgur.com"  class="form-control" />
-      <label for="textarea">Note</label>
-      <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-    <?php
-  }
-     ?>
+      <form method="POST" action="index.php">
+        <label for="name">Name</label>
+        <input name="name" id="name" placeholder="John Doe"  class="form-control" />
+        <label for="email">Email</label>
+        <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+        <label for="password">Password</label>
+        <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
+        <label for="name">Image</label>
+        <input name="image" id="image" placeholder="i.imgur.com"  class="form-control" />
+        <label for="textarea">Note</label>
+        <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <?php
+    }
+    ?>
     <blockquote>
       <B style="color:red;">
         We promise that we will keep your email address private. We only use it to allow you to quickly comment.
