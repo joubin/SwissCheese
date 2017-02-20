@@ -76,7 +76,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <?php
 
     /* Select queries return a resultset */
-    if ($results = $conn->query("SELECT * FROM Comments")) {
+    if ($results = $conn->query("SELECT * FROM Comments order by idComments desc")) {
       foreach ($results as $result) {
         $name = $result["name"];
         $imageurl = $result["image"];
