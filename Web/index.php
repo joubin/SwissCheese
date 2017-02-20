@@ -1,7 +1,6 @@
-<?php
+=<?php
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-
   $name = $_POST["name"];
   $email = $_POST["email"];
   $text = $_POST["notes"];
@@ -16,7 +15,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     echo "Error: " . $conn->error;
   }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -113,8 +111,21 @@ END;
   }
   ?>
   <div class="maincontainer">
-
     <hr />
+    <?php
+    if (isset($_SESSION["authenticated"])) {
+      ?>
+      <form method="POST" action="index.php">
+        <legal for="name">$_SESSION["name"]</legal>
+        <legal for="email">$_SESSION["email"]</legal>
+        <label for="textarea">Note</label>
+        <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <?php
+    }else{
+    ?>
+
     <form method="POST" action="index.php">
       <label for="name">Name</label>
       <input name="name" id="name" placeholder="John Doe"  class="form-control" />
@@ -126,6 +137,9 @@ END;
       <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <?php
+  }
+     ?>
     <blockquote>
       <B style="color:red;">
         We promise that we will keep your email address private. We only use it to allow you to quickly comment.
