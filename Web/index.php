@@ -93,7 +93,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
           <div class="col-sm-5">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <strong>$name</strong> <span class="text-muted"></span>
+                <strong>$name</strong> <span class="text-muted">time_elapsed_string($date)</span>
               </div>
               <div class="panel-body">
                 $text
