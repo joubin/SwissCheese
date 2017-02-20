@@ -23,7 +23,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   // delete from Class.Comments
   printf("<script>console.log('We are going to post $sql');</script>");
   if ($conn->multi_query($sql) === TRUE) {
-     echo "Username created";
+    session_start();
+    setcookie("authenticated", TRUE);
+
   } else {
     echo "Error: " . $conn->error;
   }
