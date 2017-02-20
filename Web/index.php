@@ -6,6 +6,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $hash = $_post["hash"];
     $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;";
     if ($res = $conn->query($userLookup)) {
+      echo "Found something";
       $sql = "insert into Comments";
     }else{
       header("Location: /error.php?error='something went wrong'"); /* Redirect browser */
@@ -24,7 +25,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   printf("<script>console.log('We are going to post $sql');</script>");
   if ($conn->multi_query($sql) === TRUE) {
     session_start();
-    setcookie("authenticated", );
+    setcookie("authenticated", TRUE);
 
   } else {
     echo "Error: " . $conn->error;
