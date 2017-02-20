@@ -61,7 +61,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "cheese";
-      $database = "Class"
+      $database = "Class";
 
       // Create connection
       $conn = new mysqli($servername, $username, $password, $database);
