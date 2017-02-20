@@ -72,6 +72,8 @@
       /* Select queries return a resultset */
       if ($result = $mysqli->query("SELECT * FROM Comments")) {
           printf("Select returned %d rows.\n", $result->num_rows);
+      }else{
+        printf("Failed to get anything");
       }
       ?>
       <form method="POST" action="index.php">
