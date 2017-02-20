@@ -70,7 +70,7 @@
           die("Connection failed: " . $conn->connect_error);
       }
       /* Select queries return a resultset */
-      if ($result = $mysqli->query("SELECT * FROM Comments")) {
+      if ($result = $conn->query("SELECT * FROM Comments")) {
           printf("Select returned %d rows.\n", $result->num_rows);
       }else{
         printf("Failed to get anything");
