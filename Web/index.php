@@ -77,7 +77,7 @@
             <div class="col-sm-5">
             <div class="panel panel-default">
             <div class="panel-heading">
-            <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+            <strong>$result["name"]</strong> <span class="text-muted">commented 5 days ago</span>
             </div>
             <div class="panel-body">
             Panel content
@@ -85,7 +85,7 @@
             </div><!-- /panel panel-default -->
             </div><!-- /col-sm-5 -->
             END;
-            
+
             echo "";
             // print_r($result);
             printf('<img src="'.$result["image"].'"  />');
