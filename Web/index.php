@@ -74,7 +74,7 @@
           foreach ($results as $result) {
             echo ""
             printf($result);
-            printf($result['name']);
+            // printf($result['name']);
           }
       }else{
         printf("Failed to get anything");
