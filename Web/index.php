@@ -74,22 +74,24 @@
         $imageurl = $result["image"];
         $text = $result["text"];
         print <<<END
-        <div class="comment">
-        <div class="col-sm-1 thumbnail">
-        <img class="img-responsive user-photo thumbnail" src="$imageurl">
-        </div><!-- /col-sm-1 -->
-
-        <div class="col-sm-5">
-        <div class="panel panel-default">
-        <div class="panel-heading">
-        <strong>$name</strong> <span class="text-muted">commented 5 days ago</span>
-        </div>
-        <div class="panel-body">
-        $text
-        </div><!-- /panel-body -->
-        </div><!-- /panel panel-default -->
-        </div><!-- /col-sm-5 -->
-        </div>
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="thumbnail">
+              <img class="img-responsive user-photo" src="$imageurl">
+            </div><!-- /thumbnail -->
+          </div><!-- /col-sm-1 -->
+          
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>$name</strong> <span class="text-muted">commented 5 days ago</span>
+              </div>
+              <div class="panel-body">
+                $text
+              </div><!-- /panel-body -->
+            </div><!-- /panel panel-default -->
+          </div><!-- /col-sm-5 -->
+        </div><!-- /row -->
 END;
 
         // printf($result['name']);
