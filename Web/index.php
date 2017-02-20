@@ -9,7 +9,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
 // a', "b", "c", "d", NOW()); select * from Class.Comments; --
 // delete from Class.Comments
-  printf("We are going to execute " . $sql);
+  printf("<script>console.log('We are going to post $sql');</script>")
   if ($conn->multi_query($sql) === TRUE) {
       // echo "New record created successfully";
   } else {
