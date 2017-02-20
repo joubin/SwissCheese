@@ -73,7 +73,7 @@
       if ($results = $conn->query("SELECT * FROM Comments")) {
         foreach ($results as $result) {
           $name = $result["name"];
-          $imageurl = $result["image"]
+          $imageurl = $result["image"];
           $text = $result["text"];
           print <<<END
           <div class="col-sm-1">
