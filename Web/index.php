@@ -73,7 +73,7 @@
       if ($results = $conn->query("SELECT * FROM Comments")) {
           foreach ($results as $result) {
             echo ""
-            printf($result->name);
+            printf($result['name']);
           }
       }else{
         printf("Failed to get anything");
