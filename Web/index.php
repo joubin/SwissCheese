@@ -75,7 +75,7 @@
         $text = $result["text"];
         print <<<END
         <div class="row">
-          <div class="col-sm-1">
+          <div class="col-sm-1 thumbnail">
             <div class="thumbnail">
               <img class="img-responsive user-photo" src="$imageurl">
             </div><!-- /thumbnail -->
