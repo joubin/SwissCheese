@@ -54,7 +54,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 <body>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -73,7 +73,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  </nav>
+  </nav> -->
 
   <div class="maincontainer">
     <?php
@@ -107,7 +107,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         </div><!-- /row -->
 END;
 
-        // printf($result['name']);
       }
     }else{
       printf("Failed to get anything");
@@ -130,7 +129,7 @@ END;
       </form>
       <blockquote>
         <B style="color:red;">
-          We promise that we will keep your email address private. We only use it to allow you to quickly comment. 
+          We promise that we will keep your email address private. We only use it to allow you to quickly comment.
         </B>
       </blockquote>
     </div>
