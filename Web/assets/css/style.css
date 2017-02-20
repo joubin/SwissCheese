@@ -11,7 +11,8 @@ body {
 
 .thumbnail {
     padding:0px;
-    width: 100px !important;
+    width: 200px !important;
+    height: auto;
 }
 .panel {
 	position:relative;
