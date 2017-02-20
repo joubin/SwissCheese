@@ -7,7 +7,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $text = $_POST["notes"];
   $image = $_POST["image"];
 
-  if ($conn->query("insert into Comments values(NULL, '$name', '$email', '$text', '$image')") === TRUE) {
+  if ($conn->query("insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())") === TRUE) {
       // echo "New record created successfully";
   } else {
       echo "Error: " . $conn->error;
