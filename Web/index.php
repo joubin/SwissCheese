@@ -72,7 +72,7 @@
       /* Select queries return a resultset */
       if ($results = $conn->query("SELECT * FROM Comments")) {
           foreach ($results as $result) {
-            printf($result.id)
+            printf($result.id);
           }
       }else{
         printf("Failed to get anything");
