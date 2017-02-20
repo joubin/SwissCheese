@@ -39,3 +39,8 @@ body {
 	border-right-color:#ddd;
 	border-width:8px;
 }
+
+.comment{
+  width: auto;
+  height: auto;
+}
