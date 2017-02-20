@@ -70,8 +70,8 @@
           die("Connection failed: " . $conn->connect_error);
       }
       /* Select queries return a resultset */
-      if ($result = $conn->query("SELECT * FROM Comments")) {
-          printf("Select returned %d rows.\n", $result->num_rows);
+      if ($results = $conn->query("SELECT * FROM Comments")) {
+          
       }else{
         printf("Failed to get anything");
       }
