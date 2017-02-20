@@ -7,8 +7,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $text = $_POST["notes"];
   $image = $_POST["image"];
   $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
+// a', "b", "c", "d", NOW()); select * from Class.Comments; --
+//a', "b", "c", "d", NOW()); delete from Comments; --
   printf("We are going to execute " . $sql);
-  if ($conn->query($sql) === TRUE) {
+  $stmt = $conn->prepare($sql)
+  // $stmt->execute();
+  if ($stmt->execute() === TRUE) {
       // echo "New record created successfully";
   } else {
       echo "Error: " . $conn->error;
