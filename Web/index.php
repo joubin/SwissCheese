@@ -76,6 +76,7 @@
             // print_r($result);
             printf('<img src="'.$result["image"].'"  />');
             printf($result["name"]);
+            printf($result["image"]);
             // printf($result['name']);
           }
       }else{
