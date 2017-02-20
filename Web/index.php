@@ -1,3 +1,6 @@
+<<?php
+include_once("TestConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,17 +59,7 @@
 
   <div class="maincontainer">
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "cheese";
-    $database = "Class";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
     /* Select queries return a resultset */
     if ($results = $conn->query("SELECT * FROM Comments")) {
       foreach ($results as $result) {
