@@ -74,6 +74,7 @@
         $imageurl = $result["image"];
         $text = $result["text"];
         print <<<END
+        <div>
         <div class="col-sm-1 thumbnail">
         <img class="img-responsive user-photo thumbnail" src="$imageurl">
         </div><!-- /col-sm-1 -->
@@ -88,6 +89,7 @@
         </div><!-- /panel-body -->
         </div><!-- /panel panel-default -->
         </div><!-- /col-sm-5 -->
+        </div>
 END;
 
         // printf($result['name']);
