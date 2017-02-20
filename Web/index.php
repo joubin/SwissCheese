@@ -99,6 +99,7 @@ END;
         printf("Failed to get anything");
       }
       ?>
+      <hr />
       <form method="POST" action="index.php">
         <label for="email">Email</label>
         <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
