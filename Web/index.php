@@ -10,7 +10,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 // a', "b", "c", "d", NOW()); select * from Class.Comments; --
 //a', "b", "c", "d", NOW()); delete from Comments; --
   printf("We are going to execute " . $sql);
-  $stmt = $conn->prepare($sql)
+  $stmt = $conn->prepare($sql);
   // $stmt->execute();
   if ($stmt->execute() === TRUE) {
       // echo "New record created successfully";
