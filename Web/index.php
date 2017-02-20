@@ -6,7 +6,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $hash = $_post["hash"];
     $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;"
     if ($res = $conn->query($userLookup)) {
-      $sql = "insert into Comments"
+      $sql = "insert into Comments";
     }else{
       header("Location: /error.php?error='something went wrong'"); /* Redirect browser */
     }
