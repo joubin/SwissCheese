@@ -1,11 +1,23 @@
 =<?php
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $text = $_POST["notes"];
-  $image = $_POST["image"];
-  $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
+  $sql = "";
+  if (isset($_SESSION["authenticated"])) {
+    $hash = $_post["hash"];
+    $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;"
+    if ($res = $conn->query($userLookup)) {
+      $sql = "insert into Comments"
+    }else{
+      header("Location: /error.php?error='something went wrong'"); /* Redirect browser */
+    }
+  }else{
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $text = $_POST["notes"];
+    $image = $_POST["image"];
+    $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
+  }
+
   // a', "b", "c", "d", NOW()); select * from Class.Comments; --
   // delete from Class.Comments
   printf("<script>console.log('We are going to post $sql');</script>");
@@ -131,6 +143,8 @@ END;
       <input name="name" id="name" placeholder="John Doe"  class="form-control" />
       <label for="email">Email</label>
       <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+      <label for="password">Password</label>
+      <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
       <label for="name">Image</label>
       <input name="image" id="image" placeholder="i.imgur.com"  class="form-control" />
       <label for="textarea">Note</label>
