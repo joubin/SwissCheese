@@ -3,7 +3,7 @@ include_once("TestConnection.php");
 
 $name = $_POST["name"];
 $email = $_POST["email"];
-$text = $_POST["notes"]
+$text = $_POST["notes"];
 $image = $_POST["image"];
 
 $conn->query("insert into Comments values(NULL, $name, $email, $text, $image)");
