@@ -72,12 +72,12 @@
       /* Select queries return a resultset */
       if ($results = $conn->query("SELECT * FROM Comments")) {
         foreach ($results as $result) {
-
+          $name = $result['name'];
           print <<<END
           <div class="col-sm-5">
           <div class="panel panel-default">
           <div class="panel-heading">
-          <strong>$result['name']</strong>
+          <strong>$name</strong>
           </div>
           <div class="panel-body">
           $result["text"]
