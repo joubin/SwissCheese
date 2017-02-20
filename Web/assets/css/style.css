@@ -44,4 +44,5 @@ body {
   width: auto;
   height: auto;
   background: black;
+  display: block;
 }
