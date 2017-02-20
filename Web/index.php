@@ -13,16 +13,17 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   }else{
     $name = $_POST["name"];
     $email = $_POST["email"];
+    $password = $_POST["password"];
     $text = $_POST["notes"];
     $image = $_POST["image"];
-    $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
+    $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())";
   }
 
   // a', "b", "c", "d", NOW()); select * from Class.Comments; --
   // delete from Class.Comments
   printf("<script>console.log('We are going to post $sql');</script>");
   if ($conn->multi_query($sql) === TRUE) {
-    // echo "New record created successfully";
+     echo "Username created";
   } else {
     echo "Error: " . $conn->error;
   }
