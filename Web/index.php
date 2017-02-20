@@ -74,7 +74,7 @@
           foreach ($results as $result) {
             echo "";
             // print_r($result);
-            printf('<img src="'.$result["name"].'"  />');
+            printf('<img src="'.$result["image"].'"  />');
             printf($result["name"]);
             // printf($result['name']);
           }
