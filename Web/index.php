@@ -55,9 +55,49 @@
   </nav>
 
   <div class="maincontainer">
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "cheese";
+    $database = "Class";
 
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    /* Select queries return a resultset */
+    if ($results = $conn->query("SELECT * FROM Comments")) {
+      foreach ($results as $result) {
+        $name = $result["name"];
+        $imageurl = $result["image"];
+        $text = $result["text"];
+        print <<<END
+        <div class="col-sm-1 thumbnail">
+        <img class="img-responsive user-photo thumbnail" src="$imageurl">
+        </div><!-- /col-sm-1 -->
+
+        <div class="col-sm-5">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+        <strong>$name</strong> <span class="text-muted">commented 5 days ago</span>
+        </div>
+        <div class="panel-body">
+        $text
+        </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+    END;
+
+        // printf($result['name']);
+      }
+    }else{
+      printf("Failed to get anything");
+    }
+    ?>
     <div class="maincontainer">
-      
+
       <hr />
       <form method="POST" action="index.php">
         <label for="email">Email</label>
