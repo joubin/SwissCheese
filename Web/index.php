@@ -81,7 +81,7 @@
           <strong>$name</strong>
           </div>
           <div class="panel-body">
-
+            $text
           </div><!-- /panel-body -->
           </div><!-- /panel panel-default -->
           </div><!-- /col-sm-5 -->
