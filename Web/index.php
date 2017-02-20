@@ -1,6 +1,11 @@
 <?php
 include_once("TestConnection.php");
+
+$name = $_POST["name"];
+$email = $_POST["email"];
+$text = $_POST["notes"]
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
