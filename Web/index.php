@@ -88,7 +88,7 @@
         </div><!-- /panel-body -->
         </div><!-- /panel panel-default -->
         </div><!-- /col-sm-5 -->
-    END;
+END;
 
         // printf($result['name']);
       }
