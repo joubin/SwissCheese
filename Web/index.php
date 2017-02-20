@@ -77,10 +77,10 @@
             <div class="col-sm-5">
             <div class="panel panel-default">
             <div class="panel-heading">
-            <strong>$result["name"]</strong> <span class="text-muted">commented 5 days ago</span>
+            <strong>$result["name"]</strong>
             </div>
             <div class="panel-body">
-            Panel content
+            $result["text"]
             </div><!-- /panel-body -->
             </div><!-- /panel panel-default -->
             </div><!-- /col-sm-5 -->
