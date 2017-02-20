@@ -81,7 +81,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $name = $result["name"];
         $imageurl = $result["image"];
         $text = $result["text"];
-        $date = $result["posted"]
+        $date = $result["posted"];
         print <<<END
         <div class="row">
           <div class="col-sm-1 thumbnail">
