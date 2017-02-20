@@ -8,16 +8,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $image = $_POST["image"];
   $sql = "insert into Comments values(NULL, '$name', '$email', '$text', '$image', NOW())";
 // a', "b", "c", "d", NOW()); select * from Class.Comments; --
-//a', "b", "c", "d", NOW()); delete from Comments; --
+// delete from Class.Comments
   printf("We are going to execute " . $sql);
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
-  // $stmt->execute();
-  // if ($stmt->execute() === TRUE) {
-  //     // echo "New record created successfully";
-  // } else {
-  //     echo "Error: " . $conn->error;
-  // }
+  if ($conn->multi_query($sql) === TRUE) {
+      // echo "New record created successfully";
+  } else {
+      echo "Error: " . $conn->error;
+  }
 }
 
 ?>
