@@ -1,16 +1,19 @@
 <?php
 include_once("TestConnection.php");
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-$name = $_POST["name"];
-$email = $_POST["email"];
-$text = $_POST["notes"];
-$image = $_POST["image"];
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $text = $_POST["notes"];
+  $image = $_POST["image"];
 
-if ($conn->query("insert into Comments values(NULL, '$name', '$email', '$text', '$image')") === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $conn->error;
+  if ($conn->query("insert into Comments values(NULL, '$name', '$email', '$text', '$image')") === TRUE) {
+      echo "New record created successfully";
+  } else {
+      echo "Error: " . $conn->error;
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
