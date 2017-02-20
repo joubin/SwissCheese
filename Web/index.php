@@ -4,7 +4,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
   if (isset($_SESSION["authenticated"])) {
     $hash = $_post["hash"];
-    $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;"
+    $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;";
     if ($res = $conn->query($userLookup)) {
       $sql = "insert into Comments";
     }else{
