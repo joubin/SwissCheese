@@ -114,7 +114,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       </div><!-- /panel-body -->
       </div><!-- /panel panel-default -->
       </div><!-- /col-sm-5 -->
-      </div><!-- /row -->END;
+      </div><!-- /row -->
+END;
 
     }
   }else{
