@@ -6,7 +6,7 @@ $email = $_POST["email"];
 $text = $_POST["notes"]
 $image = $_POST["image"]
 
-$conn->query("insert into Comments values(NULL, $name, $email, $text, $image)")
+$conn->query("insert into Comments values(NULL, $name, $email, $text, $image)");
 ?>
 
 <!DOCTYPE html>
