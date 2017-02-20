@@ -119,7 +119,7 @@ END;
 
     }
   }else{
-    printf("Failed to get anything");
+    printf("Be the first person to comment");
   }
   ?>
   <div class="maincontainer">
