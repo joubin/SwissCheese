@@ -64,25 +64,16 @@ include_once('TestConnection.php');
       $servername = "localhost";
       $username = "root";
       $password = "cheese";
+      $database = "Class"
 
       // Create connection
-      $conn = new mysqli($servername, $username, $password);
+      $conn = new mysqli($servername, $username, $password, $database);
 
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
       $results = $conn->query("select * from Comments") ;
-      if($results){
-        // Cycle through results
-        while ($row = $results->fetch_object()){
-          $user_arr[] = $row;
-          echo "ASD";
-        }
-        // Free result set
-        $results->close();
-        $db->next_result();
-      }
-
+      $result = $conn->query()
       ?>
       <form method="POST" action="index.php">
         <label for="email">Email</label>
