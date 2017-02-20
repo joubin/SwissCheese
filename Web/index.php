@@ -128,6 +128,11 @@ END;
 
         <button type="submit" class="btn btn-default">Confirm identity</button>
       </form>
+      <blockquote>
+        <B style="color:red;">
+          We promise that we will keep your email address private. We only use it to allow you to quickly comment. 
+        </B>
+      </blockquote>
     </div>
 
   </div><!-- /.container -->
