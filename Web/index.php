@@ -91,7 +91,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div><!-- /thumbnail -->
           </div><!-- /col-sm-1 -->
 
-          <div class="col-sm-5">
+          <div class="col-sm-10">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <strong>$name</strong> <span class="text-muted">$date</span>
