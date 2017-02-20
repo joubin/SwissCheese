@@ -67,32 +67,32 @@
       $conn = new mysqli($servername, $username, $password, $database);
 
       if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
       }
       /* Select queries return a resultset */
       if ($results = $conn->query("SELECT * FROM Comments")) {
-          foreach ($results as $result) {
+        foreach ($results as $result) {
 
-            print <<<END
-            <div class="col-sm-5">
-            <div class="panel panel-default">
-            <div class="panel-heading">
-            <strong>$result["name"]</strong>
-            </div>
-            <div class="panel-body">
-            $result["text"]
-            </div><!-- /panel-body -->
-            </div><!-- /panel panel-default -->
-            </div><!-- /col-sm-5 -->
-            END;
+          print <<<END
+          <div class="col-sm-5">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+          <strong>$result["name"]</strong>
+          </div>
+          <div class="panel-body">
+          $result["text"]
+          </div><!-- /panel-body -->
+          </div><!-- /panel panel-default -->
+          </div><!-- /col-sm-5 -->
+          END;
 
-            echo "";
-            // print_r($result);
-            printf('<img src="'.$result["image"].'"  />');
-            printf($result["name"]);
+          echo "";
+          // print_r($result);
+          printf('<img src="'.$result["image"].'"  />');
+          printf($result["name"]);
 
-            // printf($result['name']);
-          }
+          // printf($result['name']);
+        }
       }else{
         printf("Failed to get anything");
       }
