@@ -87,10 +87,10 @@
           </div><!-- /col-sm-5 -->
           END;
 
-          echo "";
-          // print_r($result);
-          printf('<img src="'.$result["image"].'"  />');
-          printf($result["name"]);
+          // echo "";
+          // // print_r($result);
+          // printf('<img src="'.$result["image"].'"  />');
+          // printf($result["name"]);
 
           // printf($result['name']);
         }
