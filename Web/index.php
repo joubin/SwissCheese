@@ -1,4 +1,4 @@
-=<?php
+<?php
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
