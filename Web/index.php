@@ -77,7 +77,7 @@
           <div class="col-sm-5">
           <div class="panel panel-default">
           <div class="panel-heading">
-          <strong>$result["name"]</strong>
+          <strong>$result['name']</strong>
           </div>
           <div class="panel-body">
           $result["text"]
