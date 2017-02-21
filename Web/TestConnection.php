@@ -59,14 +59,12 @@ function time_elapsed_string($datetime, $full = false) {
   return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 
-function location_header(){
-  if (!empty($_GET['name']) && !empty($_GET['token'])){
-    echo "Not empty";
+function location_header($page = $_SERVER['REQUEST_URI']){
+  if ($page != $_SERVER['REQUEST_URI'] || (!empty($_GET['name']) && !empty($_GET['token']))){
     return;
   }else{
     return;
   }
-  $page = $_SERVER['REQUEST_URI'];
   if (empty($_GET['name'])) {
     $page = $page."?name=";
     $page = $page.$_SESSION['name'];

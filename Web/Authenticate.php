@@ -10,7 +10,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())";
 
     if ($results = $conn->query($sql)) {
-      location_header();
+      location_header("/SwissCheese/Web/index.php");
     }else{
       die("Something went wrong");
     }
@@ -30,12 +30,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $name = $user->name;
         $token = $user->token;
 
-        session_start();
         $_SESSION['userId'] = $id;
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['token'] = $token;
-        location_header();
+        location_header("/SwissCheese/Web/index.php");
       }else if ($results->num_rows === 0) {
         printf("Cannot authenticate");
       }else{
