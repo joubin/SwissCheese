@@ -7,6 +7,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
   $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where username = $username AND password = $password";
   printf($sql);
+  printf("\n");
   if ($results = $conn->query($sql)) {
     if ($results->num_rows === 1) {
       // we are good
