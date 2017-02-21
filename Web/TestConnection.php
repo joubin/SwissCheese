@@ -12,10 +12,10 @@ if(empty($_SESSION['token'])) {
 } else {
   if (empty($_GET['name'])) {
     location_header();
-
-
-  }
+  }else{
     echo 'Welcome ' . $_GET['name'];
+  }
+
 }
 $servername = "localhost";
 $username = "root";
