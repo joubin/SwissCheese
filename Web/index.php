@@ -84,7 +84,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   /* Select queries return a resultset */
   if ($results = $conn->query("SELECT * FROM Comments order by posted desc")) {
     foreach ($results as $result) {
-      $subsql = "select * from Users where id = $result['id'];";
+      $id = $result["id"];
+      $subsql = "select * from Users where id = $id;";
       $user = $conn->query($subsql);
       $user = $user->fetch_object();
       $name = $user->name;
