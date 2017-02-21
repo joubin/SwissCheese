@@ -11,7 +11,7 @@ if(empty($_SESSION['token'])) {
   }
 } else {
   if (empty($_GET['name'])) {
-    location_header();
+    location_header($_SERVER['REQUEST_URI']);
   }else{
     echo 'Welcome ' . $_GET['name'];
   }
@@ -59,7 +59,7 @@ function time_elapsed_string($datetime, $full = false) {
   return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 
-function location_header($page = $_SERVER['REQUEST_URI']){
+function location_header($page){
   if ($page != $_SERVER['REQUEST_URI'] || (!empty($_GET['name']) && !empty($_GET['token']))){
     return;
   }else{
