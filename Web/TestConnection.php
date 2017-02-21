@@ -11,8 +11,9 @@ if(empty($_SESSION['token'])) {
   }
 } else {
   if (empty($_GET['name'])) {
-    $location = $_SERVER["REQUEST_URI"]."?name=".$_SESSION['name'];
-    header("Location $location");
+    header("Location: $_SERVER['REQUEST_URI']?name=$_SESSION['name']&token=$_SESSION['token']"); /* Redirect browser */
+
+
   }
     echo 'Welcome ' . $_GET['name'];
 }
