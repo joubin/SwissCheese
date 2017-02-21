@@ -124,8 +124,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 
     <form method="POST" action="index.php">
-      <legal for="name"><?php echo $_SESSION["name"]; ?></legal>
-      <legal for="email"><?php echo $_SESSION["email"]; ?></legal>
+  
       <label for="textarea">Note</label>
       <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
       <button type="submit" class="btn btn-default">Submit</button>
