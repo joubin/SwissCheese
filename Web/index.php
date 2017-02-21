@@ -2,10 +2,10 @@
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
-  $id = $_SESSION['userId']
-  $email = $_SESSION['email']
-  $name = $_SESSION['name']
-  $token = $_SESSION['token']
+  $id = $_SESSION['userId'];
+  $email = $_SESSION['email'];
+  $name = $_SESSION['name'];
+  $token = $_SESSION['token'];
   $text = $_REQUEST["notes"];
 
   $sql = "insert into Users values(NULL, '$id', '$text', NOW())";
