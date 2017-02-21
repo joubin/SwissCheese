@@ -6,7 +6,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $password = $_REQUEST["password"];
 
   $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where username = $username AND password = $password";
-
+  printf($sql);
   if ($results = $conn->query($sql)) {
     if ($results->num_rows === 1) {
       // we are good
@@ -31,7 +31,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     }
 
   }else{
-    die("something went even worse " + $sql);
+    die("something went even worse ");
   }
 
 }
