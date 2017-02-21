@@ -10,7 +10,10 @@ if(empty($_SESSION['token'])) {
 
   }
 } else {
-    echo 'Welcome ' . $_SESSION['name'];
+  if (empty($_GET['name'])) {
+    header("Location $_SERVER['REQUEST_URI']".$_SESSION['name']);
+  }
+    echo 'Welcome ' . $_GET['name'];
 }
 $servername = "localhost";
 $username = "root";
