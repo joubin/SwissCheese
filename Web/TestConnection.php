@@ -65,6 +65,9 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
 function location_header(){
+  if (!empty($_GET['name']) && !empty($_GET['token'])){
+    return;
+  }
   $page = $_SERVER['REQUEST_URI'];
   if (empty($_GET['name'])) {
     $page = $page."?name=";
