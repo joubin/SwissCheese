@@ -75,13 +75,20 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 <div class="maincontainer">
   <div class="maincontainer">
-    <form method="POST" action="Authenticate.php">
-      <label for="email">Email</label>
-      <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
-      <label for="password">Password</label>
-      <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <div class="row">
+      <div class="col-md-6">
+        <form method="POST" action="Authenticate.php">
+          <label for="email">Email</label>
+          <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+          <label for="password">Password</label>
+          <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        User regestration
+      </div>
+    </div>
     <blockquote>
       <B style="color:red;">
         We promise that we will keep your email address private. We only use it to allow you to quickly comment.
