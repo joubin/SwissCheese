@@ -3,7 +3,6 @@ session_start();
 if(empty($_SESSION['token'])) {
   echo "Was not authenticated" . strpos($_SERVER['REQUEST_URI'],"Authenticate.php");
 
-  printf("<script>console.log('"Was not authenticated" . strpos($_SERVER['REQUEST_URI'],"Authenticate.php")')</script>")
   if (strpos($_SERVER['REQUEST_URI'],"Authenticate.php") >= 0 ) {
     header("Location: /SwissCheese/Web/Authenticate.php?#notAuthenticated"); /* Redirect browser */
   }else{
