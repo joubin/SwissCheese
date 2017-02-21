@@ -68,6 +68,8 @@ function location_header(){
   if (!empty($_GET['name']) && !empty($_GET['token'])){
     echo "Not empty";
     return;
+  }else{
+    return;
   }
   $page = $_SERVER['REQUEST_URI'];
   if (empty($_GET['name'])) {
