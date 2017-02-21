@@ -86,8 +86,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     foreach ($results as $result) {
       $id = $result["id"];
       $subsql = "select * from Users where id = $id;";
-      $user = $conn->query($subsql);
-      $user = $user->fetch_object();
+      $res2 = $conn->query($subsql);
+      $user = $res2->fetch_object();
       $name = $user->name;
       $imageurl = $user->image;
       $text = $result["text"];
