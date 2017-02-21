@@ -6,8 +6,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $password = $_REQUEST["password"];
 
   $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where email = '$username' AND password = '$password'";
-  printf($sql);
-  printf("\n");
+
   if ($results = $conn->query($sql)) {
     if ($results->num_rows === 1) {
       // we are good
@@ -78,7 +77,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <div class="row">
       <div class="col-md-6">
         <label for="Login">Login</label>
-        <form method="POST" action="Authenticate.php">
+        <form method="POST" action="Authenticate.php?mode=login">
           <label for="email">Email</label>
           <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
           <label for="password">Password</label>
@@ -88,7 +87,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       </div>
       <div class="col-md-6">
         <label for="Regestration">Regestration</label>
-        <form method="POST" action="Authenticate.php">
+        <form method="POST" action="Authenticate.php?mode=register">
           <label for="email">Email</label>
           <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
           <label for="image">Image</label>
