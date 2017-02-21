@@ -22,8 +22,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['token'] = $token;
-        header("Location: /index.php?name=$name&toekn=$token"); /* Redirect browser */
-
+        header("Location: /SwissCheese/Web/index.php?name=$name&toekn=$token"); /* Redirect browser */
 
     }else if ($results->num_rows === 0) {
       printf("Cannot authenticate");
