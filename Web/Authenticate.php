@@ -3,8 +3,17 @@ include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $mode = $_GET['mode'];
   if (strcmp($mode, "register") === 0) {
-    echo "trying to register";
-  }else if(strcmp($mode, "login")===0){
+    $name = $_REQUEST["name"];
+    $email = $_REQUEST["email"];
+    $password = $_REQUEST["password"];
+    $image = $_REQUEST["image"];
+    $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())"
+
+    if ($results = $conn->query($sql)) {
+    }else{
+      die("Something went wrong");
+    }
+    }else if(strcmp($mode, "login") === 0){
 
     $username = $_REQUEST["email"];
     $password = $_REQUEST["password"];
@@ -92,6 +101,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <div class="col-md-6">
           <label for="Regestration">Regestration</label>
           <form method="POST" action="Authenticate.php?mode=register">
+            <label for="name">Name</label>
+            <input name="name" id="name" placeholder="Jack Johnson"  class="form-control" />
             <label for="email">Email</label>
             <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
             <label for="image">Image</label>
