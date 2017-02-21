@@ -2,30 +2,19 @@
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
-  if (isset($_SESSION["authenticated"])) {
-    $hash = $_post["hash"];
-    $userLookup = "select id from (select *,sha1(concat(name,email,password))) AS hash where hash = $hash;";
-    if ($res = $conn->query($userLookup)) {
-      echo "Found something";
-      $sql = "insert into Comments";
-    }else{
-      header("Location: /error.php?error='something went wrong'"); /* Redirect browser */
-    }
-  }else{
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $text = $_POST["notes"];
-    $image = $_POST["image"];
-    $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())";
-  }
+  $id = $_SESSION['userId']
+  $email = $_SESSION['email']
+  $name = $_SESSION['name']
+  $token = $_SESSION['token']
+  $text = $_REQUEST["notes"];
+
+  $sql = "insert into Users values(NULL, '$id', '$text', NOW())";
+
 
   // a', "b", "c", "d", NOW()); select * from Class.Comments; --
   // delete from Class.Comments
   printf("<script>console.log('We are going to post $sql');</script>");
   if ($conn->multi_query($sql) === TRUE) {
-    session_start();
-    setcookie("authenticated", TRUE);
 
   } else {
     echo "Error: " . $conn->error;
@@ -93,10 +82,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <?php
 
   /* Select queries return a resultset */
-  if ($results = $conn->query("SELECT * FROM Comments order by idComments desc")) {
+  if ($results = $conn->query("SELECT * FROM Comments order by posted desc")) {
     foreach ($results as $result) {
-      $name = $result["name"];
-      $imageurl = $result["image"];
+      $subsql = "select * from Users where id = $result['id']";
+      $user = $conn->query($subsql);
+      $user = $user->fetch_object();
+      $name = $user->name;
+      $imageurl = $user->image;
       $text = $result["text"];
       $date = $result["posted"];
       $date = time_elapsed_string($date);
@@ -128,36 +120,16 @@ END;
   ?>
   <div class="maincontainer">
     <hr />
-    <?php
-    if (isset($_SESSION["authenticated"])) {
-      ?>
-      <form method="POST" action="index.php">
-        <legal for="name">$_SESSION["name"]</legal>
-        <legal for="email">$_SESSION["email"]</legal>
-        <label for="textarea">Note</label>
-        <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <?php
-    }else{
-      ?>
 
-      <form method="POST" action="index.php">
-        <label for="name">Name</label>
-        <input name="name" id="name" placeholder="John Doe"  class="form-control" />
-        <label for="email">Email</label>
-        <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
-        <label for="password">Password</label>
-        <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
-        <label for="name">Image</label>
-        <input name="image" id="image" placeholder="i.imgur.com"  class="form-control" />
-        <label for="textarea">Note</label>
-        <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <?php
-    }
-    ?>
+
+    <form method="POST" action="index.php">
+      <legal for="name">$_SESSION["name"]</legal>
+      <legal for="email">$_SESSION["email"]</legal>
+      <label for="textarea">Note</label>
+      <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
     <blockquote>
       <B style="color:red;">
         We promise that we will keep your email address private. We only use it to allow you to quickly comment.
