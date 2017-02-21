@@ -2,9 +2,9 @@
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $mode = $_GET['mode'];
-  if (strcmp($mode, "register")) {
+  if (strcmp($mode, "register") === 0) {
     echo "trying to register";
-  }else if(strcmp($mode, "login")){
+  }else if(strcmp($mode, "login")===0){
 
     $username = $_REQUEST["email"];
     $password = $_REQUEST["password"];
