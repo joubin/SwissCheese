@@ -91,6 +91,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <form method="POST" action="Authenticate.php">
           <label for="email">Email</label>
           <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+          <label for="image">Image</label>
+          <input name="image" id="image" placeholder="i.imgur.com/yourpic"  class="form-control" />
           <label for="password">Password</label>
           <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
           <button type="submit" class="btn btn-default">Submit</button>
