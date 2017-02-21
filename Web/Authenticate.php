@@ -5,7 +5,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $username = $_REQUEST["email"];
   $password = $_REQUEST["password"];
 
-  $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where username = $username AND password = $password";
+  $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where email = '$username' AND password = '$password'";
   printf($sql);
   printf("\n");
   if ($results = $conn->query($sql)) {
