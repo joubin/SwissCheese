@@ -112,7 +112,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       </div><!-- /panel panel-default -->
       </div><!-- /col-sm-5 -->
       </div><!-- /row -->
-      END;
+END;
 
     }
   }else{
@@ -121,14 +121,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   ?>
   <div class="maincontainer">
     <hr />
-
-
-    <form method="POST" action="index.php">
-  
-      <label for="textarea">Note</label>
-      <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
 
     <blockquote>
       <B style="color:red;">
