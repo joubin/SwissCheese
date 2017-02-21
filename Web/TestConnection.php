@@ -64,15 +64,14 @@ function location_header($page){
     return;
   }
   if (empty($_GET['name'])) {
-    $page = $page."?name=";
-    $page = $page.$_SESSION['name'];
+    $page = $page."?name=".$_SESSION['name'];
   }
   if (empty($_GET['token'])) {
-    $page = $page."&token".$_SESSION['token'];
+    $page = $page."&token=".$_SESSION['token'];
 
   }
   if (empty($_GET['userId'])) {
-    $page = $page."&userId".$_SESSION['userId'];
+    $page = $page."&userId=".$_SESSION['userId'];
 
   }
   header("Location: $page"); /* Redirect browser */
