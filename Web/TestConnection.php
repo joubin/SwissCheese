@@ -3,7 +3,9 @@
 session_start();
 if(!isset($_SESSION['token'])) {
   if (strpos($_SERVER['REQUEST_URI'],"Authenticate.php") !== false ) {
-    header("Location: /SwissCheese/Web/Authenticate.php?#notAuthenticated"); /* Redirect browser */
+    // header("Location: /SwissCheese/Web/Authenticate.php?#notAuthenticated"); /* Redirect browser */
+  }else{
+
   }
 } else {
     echo 'Welcome ' . $_SESSION['username'];
