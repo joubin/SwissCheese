@@ -31,7 +31,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     }
 
   }else{
-    die("something went even worse");
+    die("something went even worse " + $sql);
   }
 
 }
