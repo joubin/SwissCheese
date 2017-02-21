@@ -11,7 +11,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $text = $_REQUEST["notes"];
 
   $sql = "insert into Comments values(NULL, '$id', '$text', NOW())";
-
+  echo $sql;
 
   // a', "b", "c", "d", NOW()); select * from Class.Comments; --
   // delete from Class.Comments
