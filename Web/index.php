@@ -8,7 +8,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $token = $_SESSION['token'];
   $text = $_REQUEST["notes"];
 
-  $sql = "insert into Users values(NULL, '$id', '$text', NOW())";
+  $sql = "insert into Comments values(NULL, '$id', '$text', NOW())";
 
 
   // a', "b", "c", "d", NOW()); select * from Class.Comments; --
