@@ -1,20 +1,24 @@
 <?php
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+  $mode = $_GET['mode'];
+  if (strcmp($mode, "register")) {
+    echo "trying to register";
+  }else if(strcmp($mode, "login")){
 
-  $username = $_REQUEST["email"];
-  $password = $_REQUEST["password"];
+    $username = $_REQUEST["email"];
+    $password = $_REQUEST["password"];
 
-  $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where email = '$username' AND password = '$password'";
+    $sql = "select name,email,id, sha1(concat(name,email,id,password)) AS token from Users where email = '$username' AND password = '$password'";
 
-  if ($results = $conn->query($sql)) {
-    if ($results->num_rows === 1) {
-      // we are good
-      $user = $results->fetch_object();
-      $id = $user->id;
-      $email = $user->email;
-      $name = $user->name;
-      $token = $user->token;
+    if ($results = $conn->query($sql)) {
+      if ($results->num_rows === 1) {
+        // we are good
+        $user = $results->fetch_object();
+        $id = $user->id;
+        $email = $user->email;
+        $name = $user->name;
+        $token = $user->token;
 
         session_start();
         $_SESSION['userId'] = $id;
@@ -23,16 +27,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $_SESSION['token'] = $token;
         header("Location: /SwissCheese/Web/index.php?name=$name&toekn=$token"); /* Redirect browser */
 
-    }else if ($results->num_rows === 0) {
-      printf("Cannot authenticate");
+      }else if ($results->num_rows === 0) {
+        printf("Cannot authenticate");
+      }else{
+        die("somethign went terribally wrong");
+      }
+
     }else{
-      die("somethign went terribally wrong");
+      die("something went even worse ");
     }
-
-  }else{
-    die("something went even worse ");
   }
-
 }
 ?>
 
@@ -72,51 +76,51 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 <body>
 
-<div class="maincontainer">
   <div class="maincontainer">
-    <div class="row">
-      <div class="col-md-6">
-        <label for="Login">Login</label>
-        <form method="POST" action="Authenticate.php?mode=login">
-          <label for="email">Email</label>
-          <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
-          <label for="password">Password</label>
-          <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+    <div class="maincontainer">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="Login">Login</label>
+          <form method="POST" action="Authenticate.php?mode=login">
+            <label for="email">Email</label>
+            <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+            <label for="password">Password</label>
+            <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <label for="Regestration">Regestration</label>
+          <form method="POST" action="Authenticate.php?mode=register">
+            <label for="email">Email</label>
+            <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
+            <label for="image">Image</label>
+            <input name="image" id="image" placeholder="i.imgur.com/yourpic"  class="form-control" />
+            <label for="password">Password</label>
+            <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>      </div>
+        </div>
+        <blockquote>
+          <B style="color:red;">
+            We promise that we will keep your email address private. We only use it to allow you to quickly comment.
+          </B>
+        </blockquote>
       </div>
-      <div class="col-md-6">
-        <label for="Regestration">Regestration</label>
-        <form method="POST" action="Authenticate.php?mode=register">
-          <label for="email">Email</label>
-          <input name="email" id="email" placeholder="test@example.org"  class="form-control" />
-          <label for="image">Image</label>
-          <input name="image" id="image" placeholder="i.imgur.com/yourpic"  class="form-control" />
-          <label for="password">Password</label>
-          <input name="password" id="password" placeholder="password" type="password"  class="form-control" />
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>      </div>
-    </div>
-    <blockquote>
-      <B style="color:red;">
-        We promise that we will keep your email address private. We only use it to allow you to quickly comment.
-      </B>
-    </blockquote>
-  </div>
 
-</div><!-- /.container -->
+    </div><!-- /.container -->
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
-<?php
-$conn->close();
-?>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+  </html>
+  <?php
+  $conn->close();
+  ?>
