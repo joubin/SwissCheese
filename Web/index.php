@@ -2,9 +2,11 @@
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
-  $id = $_SESSION['userId'];
+  // $id = $_SESSION['userId'];
+  $id = $_GET['userId'];
   $email = $_SESSION['email'];
-  $name = $_SESSION['name'];
+  // $name = $_SESSION['name'];
+  $name = $_GET['name'];
   $token = $_SESSION['token'];
   $text = $_REQUEST["notes"];
 

@@ -71,6 +71,10 @@ function location_header($page){
     $page = $page."&token".$_SESSION['token'];
 
   }
+  if (empty($_GET['userId'])) {
+    $page = $page."&userId".$_SESSION['userId'];
+
+  }
   header("Location: $page"); /* Redirect browser */
 }
 ?>
