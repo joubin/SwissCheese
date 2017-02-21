@@ -1,7 +1,13 @@
 <?php
 
 session_start();
-
+if(!isset($_SESSION['token'])) {
+  if ($_SERVER[REQUEST_URI] != "Authenticate.php") {
+    header("Location: /Authenticate.php?#notAuthenticated"); /* Redirect browser */
+  }
+} else {
+    echo 'Welcome ' . $_SESSION['username'];
+}
 $servername = "localhost";
 $username = "root";
 $password = "cheese";
