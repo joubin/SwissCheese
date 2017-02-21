@@ -11,7 +11,7 @@ if(empty($_SESSION['token'])) {
   }
 } else {
   if (empty($_GET['name'])) {
-    header("Location $_SERVER['REQUEST_URI']".$_SESSION['name']);
+    header("Location $_SERVER['REQUEST_URI']?name=$_SESSION['name']");
   }
     echo 'Welcome ' . $_GET['name'];
 }
