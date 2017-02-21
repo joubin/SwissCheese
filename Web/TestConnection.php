@@ -63,4 +63,17 @@ function time_elapsed_string($datetime, $full = false) {
   if (!$full) $string = array_slice($string, 0, 1);
   return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
+function location_header(){
+  $page = $_SERVER['REQUEST_URI'];
+  if (empty($_GET['name'])) {
+    $page = $page."?name=";
+    $page = $page.$_SESSION['name'];
+  }
+  if (empty($_GET['token'])) {
+    $page = $page."&token".$_SESSION['token'];
+
+  }
+  header("Location: $page"); /* Redirect browser */
+}
 ?>

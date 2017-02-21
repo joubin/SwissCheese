@@ -10,7 +10,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())";
 
     if ($results = $conn->query($sql)) {
-      done_authenticating();
+      location_header();
     }else{
       die("Something went wrong");
     }
@@ -35,7 +35,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['token'] = $token;
-        done_authenticating();
+        location_header();
       }else if ($results->num_rows === 0) {
         printf("Cannot authenticate");
       }else{
@@ -48,10 +48,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   }
 }
 
-function done_authenticating(){
-  header("Location: /SwissCheese/Web/index.php?name=$name&toekn=$token"); /* Redirect browser */
-
-}
 ?>
 
 
