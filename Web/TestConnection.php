@@ -8,7 +8,7 @@ if(!isset($_SESSION['token'])) {
 
   }
 } else {
-    echo 'Welcome ' . $_SESSION['username'];
+    echo 'Welcome ' . $_SESSION['name'];
 }
 $servername = "localhost";
 $username = "root";
