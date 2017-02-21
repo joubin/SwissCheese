@@ -16,7 +16,7 @@ if(empty($_SESSION['token'])) {
     $page = $page.$_SESSION['name'];
     $page = $page."&token".$_SESSION['token'];
     printf($page);
-    // header("Location: $_SERVER['REQUEST_URI']?name=$_SESSION['name']&token=$_SESSION['token']"); /* Redirect browser */
+    header("Location: $page"); /* Redirect browser */
 
 
   }
