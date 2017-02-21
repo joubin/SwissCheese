@@ -7,7 +7,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $email = $_REQUEST["email"];
     $password = $_REQUEST["password"];
     $image = $_REQUEST["image"];
-    $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())"
+    $sql = "insert into Users values(NULL, '$name', '$email', '$password', '$image', NOW())";
 
     if ($results = $conn->query($sql)) {
     }else{
