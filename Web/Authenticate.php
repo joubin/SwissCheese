@@ -88,7 +88,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <div class="maincontainer">
     <div class="maincontainer">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="Login">Login</label>
           <form method="POST" action="Authenticate.php?mode=login">
             <label for="email">Email</label>
@@ -98,7 +98,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="Regestration">Regestration</label>
           <form method="POST" action="Authenticate.php?mode=register">
             <label for="name">Name</label>
