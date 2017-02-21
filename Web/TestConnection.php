@@ -70,8 +70,8 @@ function location_header($page){
     $page = $page."&token=".$_SESSION['token'];
 
   }
-  if (empty($_GET['userId'])) {
-    $page = $page."&userId=".$_SESSION['userId'];
+  if (empty($_GET['userid'])) {
+    $page = $page."&userid=".$_SESSION['userid'];
 
   }
   header("Location: $page"); /* Redirect browser */

@@ -30,7 +30,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $name = $user->name;
         $token = $user->token;
 
-        $_SESSION['userId'] = $id;
+        $_SESSION['userid'] = $id;
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['token'] = $token;

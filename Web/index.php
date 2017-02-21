@@ -2,8 +2,8 @@
 include_once("TestConnection.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   $sql = "";
-  // $id = $_SESSION['userId'];
-  $id = $_GET['userId'];
+  // $id = $_SESSION['userid'];
+  $id = $_GET['userid'];
   $email = $_SESSION['email'];
   // $name = $_SESSION['name'];
   $name = $_GET['name'];
