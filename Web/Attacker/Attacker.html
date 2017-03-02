@@ -58,7 +58,8 @@
       var note = victomDocument.getElementById("notes");
 
       var rect = note.getBoundingClientRect();
-      document.getElementById('id') = note;
+      var mydocument  = document.getElementById('id');
+      mydocument.offsetLeft= note.offsetLeft;
       console.log("set to id");
     }, 1);
   }
