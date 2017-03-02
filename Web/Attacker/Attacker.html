@@ -55,6 +55,8 @@
   function dostuff() {
     setTimeout(function(){
       var frame = document.getElementsByTagName("iframe")[0];
+      frame.style.top = "0px";
+      frame.style.position = "absolute";
       var victomDocument = frame.contentDocument;
       var note = victomDocument.getElementById("notes");
       var frameRect = frame.getBoundingClientRect();
