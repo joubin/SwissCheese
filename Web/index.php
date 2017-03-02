@@ -90,7 +90,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       <input name="email" id="email" value="<?php echo $_SESSION["email"]?>"   class="form-control" readonly="TRUE"/>
       <label for="textarea">Note</label>
       <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button id="button" type="submit" class="btn btn-default">Submit</button>
     </form>
     <blockquote>
       <B style="color:red;">
