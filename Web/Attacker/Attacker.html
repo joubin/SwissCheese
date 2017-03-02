@@ -76,13 +76,13 @@
       mydocument.columns = note.columns
 
       var mybutton = document.getElementById("button");
-      mybutton.style.position = "absolute"
 
       var button = victomDocument.getElementById("button");
       var rect = button.getBoundingClientRect();
       mybutton.style = button.style
       mybutton.style.position = "absolute";
       mybutton.style.top = (rect.top)+"px";
+      console.log("rec top "+ rect.top)
       mybutton.style.left = rect.left+"px";
 
 
