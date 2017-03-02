@@ -54,15 +54,16 @@
 <script type="text/javascript">
   function dostuff() {
     setTimeout(function(){
-          var frame = document.getElementsByTagName("iframe")[0];
+      var frame = document.getElementsByTagName("iframe")[0];
       var victomDocument = frame.contentDocument;
       var note = victomDocument.getElementById("notes");
+      var frameRect = frame.getBoundingClientRect();
 
       var rect = note.getBoundingClientRect();
       var mydocument  = document.getElementById('id');
       mydocument.style = note.style
       mydocument.style.position = "absolute";
-      mydocument.style.top = rect.top+"px";
+      mydocument.style.top = (frameRect.top+rect.top)+"px";
       mydocument.style.left = rect.left+"px";
       mydocument.rows = note.rows;
       mydocument.columns = note.columns
