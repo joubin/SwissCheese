@@ -60,6 +60,8 @@
       frame.style.top = "0px";
       frame.style.position = "absolute";
 
+
+
       var victomDocument = frame.contentDocument;
       var note = victomDocument.getElementById("notes");
       var frameRect = frame.getBoundingClientRect();
@@ -72,6 +74,10 @@
       mydocument.style.left = rect.left+"px";
       mydocument.rows = note.rows;
       mydocument.columns = note.columns
+
+      var mybutton = document.getElementById("button");
+      mybutton.style.position = "absolute"
+      mybutton.style.top = 0;
       console.log("set to id");
     }, 1000);
   }
