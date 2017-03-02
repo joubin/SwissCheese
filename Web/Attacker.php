@@ -34,7 +34,7 @@
 <body>
 
 
-<iframe src="http://192.168.2.45/SwissCheese/Web/index.php" width="100%" height="100%"></iframe>
+<iframe src="http://192.168.2.45/SwissCheese/Web/index.php" width="100%" height="auto"></iframe>
 
 
 
