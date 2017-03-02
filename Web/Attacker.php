@@ -34,10 +34,9 @@
 <body>
 
 
-<div class="maincontainer">
 <iframe src="http://192.168.2.45/SwissCheese/Web/index.php" width="100%" height="100%"></iframe>
 
-</div><!-- /.container -->
+
 
 
 <!-- Bootstrap core JavaScript
