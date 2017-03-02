@@ -32,6 +32,8 @@
   border:0;
   position:relative;
   opacity: .1;
+  z-index:0;
+
 }
 
 .description {
@@ -57,6 +59,7 @@
       var frame = document.getElementsByTagName("iframe")[0];
       frame.style.top = "0px";
       frame.style.position = "absolute";
+
       var victomDocument = frame.contentDocument;
       var note = victomDocument.getElementById("notes");
       var frameRect = frame.getBoundingClientRect();
