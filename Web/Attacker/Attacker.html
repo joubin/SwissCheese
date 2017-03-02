@@ -77,6 +77,15 @@
 
       var mybutton = document.getElementById("button");
       mybutton.style.position = "absolute"
+
+      var button = victomDocument.getElementById("button");
+      rect = button.getBoundingClientRect();
+      mybutton.style = button.style
+      mybutton.style.position = "absolute";
+      mybutton.style.top = (rect.top)+"px";
+      mybutton.style.left = rect.left+"px";
+
+
       mybutton.style.top = 0;
       console.log("set to id");
     }, 1000);
