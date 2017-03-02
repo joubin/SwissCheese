@@ -61,6 +61,8 @@
       var mydocument  = document.getElementById('id');
       mydocument.style = note.style
       mydocument.style.position = "absolute";
+      mydocument.style.top = note.style.top;
+      mydocument.style.left = note.style.left;
       console.log("set to id");
     }, 1);
   }
