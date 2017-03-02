@@ -78,11 +78,11 @@
         var rect = button.getBoundingClientRect();
         // document.getElementById("thebutton").style = button.style
         document.getElementById("thebutton").style.position = "absolute";
+
+        document.getElementById("thebutton").style.left = rect.left+"px";
         document.getElementById("thebutton").style.top = (rect.top)+"px !important";
         console.log("rec top "+ rect.top)
         console.log("rec top "+ document.getElementById("thebutton").style.top)
-        document.getElementById("thebutton").style.left = rect.left+"px";
-
 
         mybutton.style.top = 0;
         console.log("set to id");
