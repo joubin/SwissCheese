@@ -81,6 +81,23 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 </nav> -->
 
 <div class="maincontainer">
+  <div class="maincontainer">
+    <hr />
+    <form method="POST" action="index.php">
+      <label for="name">Name</label>
+      <input name="name" id="name" value="<?php echo $_SESSION["name"]?>"  class="form-control" readonly="TRUE"/>
+      <label for="email">Email</label>
+      <input name="email" id="email" value="<?php echo $_SESSION["email"]?>"   class="form-control" readonly="TRUE"/>
+      <label for="textarea">Note</label>
+      <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <blockquote>
+      <B style="color:red;">
+        We promise that we will keep your email address private. We only use it to allow you to quickly comment.
+      </B>
+    </blockquote>
+  </div>
   <?php
 
   /* Select queries return a resultset */
@@ -121,23 +138,7 @@ END;
     printf("Be the first person to comment");
   }
   ?>
-  <div class="maincontainer">
-    <hr />
-    <form method="POST" action="index.php">
-      <label for="name">Name</label>
-      <input name="name" id="name" value="<?php echo $_SESSION["name"]?>"  class="form-control" readonly="TRUE"/>
-      <label for="email">Email</label>
-      <input name="email" id="email" value="<?php echo $_SESSION["email"]?>"   class="form-control" readonly="TRUE"/>
-      <label for="textarea">Note</label>
-      <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-    <blockquote>
-      <B style="color:red;">
-        We promise that we will keep your email address private. We only use it to allow you to quickly comment.
-      </B>
-    </blockquote>
-  </div>
+
 
 </div><!-- /.container -->
 
