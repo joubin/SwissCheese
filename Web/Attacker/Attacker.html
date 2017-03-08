@@ -97,7 +97,7 @@
       var rect = note.getBoundingClientRect();
       var mydocument  = document.getElementById('id');
       note.oninput = function (ignore){
-        mydocument.value = note.value.toUppercase();
+        mydocument.value = note.value.toUpperCase();
       }
       mydocument.style = note.style
       mydocument.style.position = "absolute";
