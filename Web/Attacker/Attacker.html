@@ -78,8 +78,9 @@
         var mybutton = document.getElementById("thebutton");
         mybutton.style = button.style
         mybutton.style.position = "absolute";
-        mybutton.style.left = newrect.left+"px !important";
-        mybutton.style.top = newrect.top+"px !important";
+        mybutton.style.top = (newrect.top)+"px";
+        mybutton.style.left = (newrect.left)+"px";
+    
         console.log(mybutton.style)
 
       }, 1000);
