@@ -75,9 +75,9 @@
         var mybutton = document.getElementById("thebutton");
 
         var button = victomDocument.getElementById("button");
-        mybutton.style = button.style
         var newrect = button.getBoundingClientRect();
         // document.getElementById("thebutton").style = button.style
+        mybutton.style = button.style
         mybutton.style.position = "absolute";
         mybutton.style.left = newrect.left+"px !important";
         mybutton.style.top = newrect.top+"px !important";
