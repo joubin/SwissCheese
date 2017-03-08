@@ -92,8 +92,13 @@
 
       var note = victomDocument.getElementById("notes");
 
+      note.onchange
+
       var rect = note.getBoundingClientRect();
       var mydocument  = document.getElementById('id');
+      note.oninput = function (ignore){
+        mydocument.innertext = note.innertext;
+      }
       mydocument.style = note.style
       mydocument.style.position = "absolute";
       mydocument.style.top = (50+rect.top)+"px";
