@@ -60,8 +60,8 @@
 
 
         var victomDocument = frame.contentDocument;
+
         var note = victomDocument.getElementById("notes");
-        var frameRect = frame.getBoundingClientRect();
 
         var rect = note.getBoundingClientRect();
         var mydocument  = document.getElementById('id');
@@ -72,11 +72,10 @@
         mydocument.rows = note.rows;
         mydocument.columns = note.columns
 
-        var mybutton = document.getElementById("thebutton");
-
         var button = victomDocument.getElementById("button");
+
         var newrect = button.getBoundingClientRect();
-        // document.getElementById("thebutton").style = button.style
+        var mybutton = document.getElementById("thebutton");
         mybutton.style = button.style
         mybutton.style.position = "absolute";
         mybutton.style.left = newrect.left+"px !important";
