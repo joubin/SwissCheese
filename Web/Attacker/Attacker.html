@@ -44,6 +44,11 @@
     top:0;
     left:0
   }
+
+  .opacitybuttons{
+    position: absolute;
+    top: 0px !important;
+  }
   </style>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -73,7 +78,7 @@
     }
     return query_string;
   }();
-  
+
   function dostuff() {
     setTimeout(function(){
       var frame = document.getElementsByTagName("iframe")[0];
