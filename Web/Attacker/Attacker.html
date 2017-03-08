@@ -120,6 +120,7 @@
     }, 1000);
   }
   function showControls(){
+    console.log("running")
     var shouldShow = eval(QueryString.showControls);
     if (shouldShow) {
       document.getElementById("opcontrols").style.display = "";
@@ -131,7 +132,7 @@
 </head>
 
 <body >
-<div id="opcontrols" class="opacitybuttons" onload="showControls()">
+<div id="opcontrols" class="opacitybuttons" onload="showControls">
   <button id="decreasebutton" type="submit" onclick='document.getElementById("victom").style.opacity = 0' class="btn btn-default">0%</button>
   <button id="decreasebutton" type="submit" onclick='document.getElementById("victom").style.opacity = 0.5' class="btn btn-default">50%</button>
   <button id="decreasebutton" type="submit" onclick='document.getElementById("victom").style.opacity = 1' class="btn btn-default">100%</button>
