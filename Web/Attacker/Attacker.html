@@ -80,12 +80,11 @@
         // document.getElementById("thebutton").style = button.style
         mybutton.style.position = "absolute";
 
-        mybutton.style.left = rect.left+"px";
+        mybutton.style.left = rect.left+"px !important";
         mybutton.style.top = rect.top+"px !important";
         console.log("rec top "+ rect.top)
         console.log("rec top "+ document.getElementById("thebutton").style.top)
 
-        mybutton.style.top = 0;
         console.log("set to id");
       }, 1000);
     }
