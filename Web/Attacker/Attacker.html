@@ -79,6 +79,8 @@
         mybutton.style = button.style
         var rect = button.getBoundingClientRect();
         // document.getElementById("thebutton").style = button.style
+        mybutton.style.position = "absolute";
+
         document.getElementById("thebutton").style.left = rect.left+"px";
         document.getElementById("thebutton").style.top = "500px";//rect.top+"px !important";
         console.log("rec top "+ rect.top)
